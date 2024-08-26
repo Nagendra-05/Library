@@ -1,0 +1,2486 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    <style>
+        .box{
+          display:flex;
+          flex-direction:row;
+          justify-content:space-between;
+        }
+        .flex{
+          display:flex;
+          flex-direction:column;
+          height:350px;
+          width:270px;
+          background-color:white;
+          margin-left:10px;
+          box-shadow:0 0 5px black;
+          margin-top:30px;
+        }
+        .image{
+          height:250px;
+          width:270px;
+          object-fit: contain;
+        }
+
+    
+        .search-container {
+      display: flex;
+      flex-direction: column; 
+      align-items: center; 
+      margin-top: 50px;
+      position: relative; 
+      width: 100%; 
+    }
+    .search-input {
+      width: 300px;
+      padding: 10px;
+      font-size: 16px;
+    }
+    .search-button {
+      padding: 10px;
+      font-size: 16px;
+      cursor: pointer;
+      margin-top: 10px; 
+    }
+    .suggestions {
+      position: absolute;
+      top: 100%; 
+      left: 50%;
+      transform: translateX(-50%); 
+      width: 300px; 
+      background: white;
+      border: 1px solid #ddd;
+      border-top: none;
+      max-height: 150px;
+      overflow-y: auto;
+      z-index: 1;
+      display: none; 
+    }
+    .suggestion-item {
+      padding: 10px;
+      cursor: pointer;
+    }
+    .suggestion-item:hover {
+      background-color: skyblue;
+      color: white;
+    }
+    .product-list {
+      margin-top: 20px;
+      text-align: center;
+    }
+    .product-item {
+      border: 1px solid #ddd;
+      padding: 10px;
+      margin: 5px 0;
+      display: inline-block;
+      width: 300px;
+      text-align: left;
+    }
+    .product-item img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 10px;
+    }
+.aboutbook{
+  height:90px;
+  margin-top:10px;
+  background-color:skyblue;
+  padding-left:7px;
+  line-height:30px;
+
+}
+        </style>
+
+    </head>
+    <body>
+        
+            <div class="search-container">
+                <input type="text" id="search-input" class="search-input" placeholder="Search..." oninput="showSuggestions()" onfocus="toggleSuggestions(true)" onblur="toggleSuggestions(false)">
+                <div id="suggestions" class="suggestions"></div>
+                <button onclick="search()" class="search-button">Search</button>
+              </div>
+            
+              <div id="search-results" class="product-list"></div>
+
+        <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dlhDCxf.md.jpg">
+          </div>
+          <div class="aboutbook">
+        
+            NAME:INSPIRING ESSAYS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dljSqKb.md.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:COMPENDPUIUM OF WORDS <br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+<img class="image" src="https://iili.io/dljysb1.md.jpg">
+          </div>
+          <div class="aboutbook">
+NAME:AIDS TO THE STUDY AND COMPOSITION OF ENGLISH<br>
+NO OF AVAILABLE BOOKS:
+
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+<img class="image" src="https://iili.io/dlNrvzQ.md.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:COMMUNICATION AND SOFT SKILLS 1<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        
+        </div>
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dlOFtj4.md.jpg">
+            </div>
+            <div class="aboutbook">
+          
+              NAME:ENGLISH A SPECTRUM OF LANGUAGE SKILL<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dlOnuQj.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:ENGLISH CONVERSATION PRACTICE<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dlO0DDx.md.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:ENGLISH IN USE SEMISTER 1<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dlO0DDx.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:ENGLISH PORTAL<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dlOL2nf.md.jpg">
+            </div>
+            <div class="aboutbook">
+          
+              NAME:ENGLISH PROXIS COURSE 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dlODqib.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:EVERYDAY VOCABULARY<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dlOm4lj.md.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:GRAMMER AND SPOKEN ENGLISH<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dle9pfe.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:LINGUA FRANCA PLETHORA SEMISTER 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dle9pfe.md.jpg">
+            </div>
+            <div class="aboutbook">
+          
+              NAME:LINGUA FRANCA PLETHORA SEMISTER 3<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dleBPCx.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MERRIAM-WEBSTER'S_COLLEGIATE_THESAURS-2[1]<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dleocEx.md.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:MODEL LETTERS<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dlezxO7.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MODERN ESSAYS FOR COLLAGE STUDENTS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dleTjAN.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:OBJECTIVE GENERAL ENGLISH<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGVhUT7.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:OBJECTIVE GENERAL ENGLLISH 1000+ QUESTIONS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGV45HF.md.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:oxford adavanced learner's dictionary<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGVbCdv.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:The WHIZ-KID Book of Essays<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>      
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGW9BnI.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:RAMAYANA ENGLISH<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGViFSI.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SKILL GENIE 2<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGVsX14.md.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:SKILL PRO 1<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGVLx3l.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SKILL PRO 3<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>       
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGVQASp.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SKILL PRO<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGVZw2R.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SKILLS ENRICH<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGVtAuI.md.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:SKILLS GENIE<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGVDJPs.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:THE DULINGO ENGLISH TEST<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>     
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGVmBn9.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:TOPICAL ESSAYS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGVmLKu.md.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:USAGE OF KEY WORDS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGWHrdu.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:WORD POWER MADE EASY<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+           <!--telugu-->
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGXjRup.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:TELUGU SEMISTER 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+          
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGWF39n.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:AADHUNIKA BASHA SASTAR SIDHANTHALU<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGWKOzb.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:ASTADHASHA PURANAMULUL<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGWnYog.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:BATRUHARI SHUBASHITHAMU<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGWxicx.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:BHAGAVATHAM<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>    
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGWIFgj.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:GROUP-2_TELUGU_SAAHITYAM 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGWLmI1.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:KAVYASUDHA<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGWtJJR.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:MAHABARATHAM<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGWpE6F.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:PURVAGAADHALAHARY<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGWbxN2.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:PEDHA BALASIKSHA PART 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGXk1yJ.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:PEDHA BALASIKSHA PART 2<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGX9s49.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:RAMAYANAM<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGXFMpn.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SAAHITHI KOIMUDHI<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGXKits.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SAAHITHI VIMARSA<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGXCJDX.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SABDHARATNAKARAMU 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGXzZaj.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:SABDHARATNAKARAMU<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGXuMyx.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SAHITHI SOIRABAM<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGXRxef.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SARASVATHI VYASAMULU<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGXYcdX.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SPECIAL TELUGU PART 2 PAPER 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGXlxee.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:TELUGU ENGLISH DICTIONARY<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGX0PoJ.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:TELUGU GUIDE<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGXGU9S.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:TELUGU PART 1 PAPER 2<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGXWqZX.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:TELUGU -PARISODHANA<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <!--MATHS-->
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGXyg4t.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:1 BSc DIFFERENTIAL EQUATION SEM 1<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhd6il.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:1 BSc MATHEMATICS SEM1 PAPER 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGhfBYN.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:ABSTRACT ALGEBRA 7TH EDITION<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGhBpv2.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:BSc MATHEMATICS 1YEAR 2 SEM<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhREtR.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:BUINESS MATHEMATICS<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGh5O0P.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:DIFFERENTIAL EQUATIONS SEM 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGhavd7.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:DIFFERENTIAL EQUATIONS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGhlwSS.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:DISCRETE MATHEMATICS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhMmcx.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:ELEMENTARY MATHEMATICS<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhWSkl.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:ELEMENTS OF REAL ANALYSIS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGhhdtS.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:ENGINEEIRING MATHEMATICS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGhjpTl.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:FINITE DIFFERENCE AND NUMERICAL ANALYSIS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGheoZl.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:FUNCTIONS OF ONE COMPLEX VARIABLE<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhvNBp.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:IIT JAM MATHEMATICS PREVIOUS AND PRATICE PAPERS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGhUUyF.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:LINEAR ALGEBRA<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGh4Fp9.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:LINEAR PROGRAMMING<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhPSI9.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:MAGICAL BOOK FOR QUICKER MATHEMATICS<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhsltt.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS VOILUEM 3 RING THEORY AND CALCULUS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGhLZp2.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS ABSTRACT ALGEBRA SEM 3 PAPER 3<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGhDAyx.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS FIRST YEAR TELUGU<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhme7s.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:MATHEMATICS FOFR NDA AND NA<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGhyGiN.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS LINEAR ALGEBRA VOLUME 3<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div> 
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGjHNn4.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS RING THEORY AND CALCULUS SEM 5 PAPER 5<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGjdmZJ.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS SEM 1 AND 2<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGj3KlV.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:MATHEMATICS SEM 3 AND 4<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGwAb8F.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:DIFFERENTIAL EQUATIONS TELUGU<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGjwLLN.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS VOILUME 1<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGjkACl.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS VOLUME 2 ABSTRACT ALGEBRA<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGj86pn.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:MATHEMATICS VOLUME 2 REAL ANALYSIS<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGjgyvI.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:MATHEMATICS VOLUME 2<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div>  
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGjLjFs.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:NUMARICAL ANALYSIS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGjteHJ.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:ORDINARY AND PARTIAL DIFFERENTIAL EQUATIONS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGjphzv.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:PRINCIPLES OF MANAGEMENT<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGwJM4p.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:REAL ANALYSIS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div> 
+        <div class="box">
+          <div class="flex">
+            <div>
+          <img class="image" src="https://iili.io/dGwd8Dg.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SOLID GEOMETRY<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+           <img class="image" src="https://iili.io/dGwFKMb.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:SPECIAL FUNCTIONS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGwqH9p.jpg">
+            </div>
+            <div class="aboutbook">
+  NAME:THOMAS CALCULUS<br>
+  NO OF AVAILABLE BOOKS:
+  
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+  <img class="image" src="https://iili.io/dGwncUG.jpg">
+            </div>
+            <div class="aboutbook">
+              NAME:VECTOR ANALYSIS<br>
+              NO OF AVAILABLE BOOKS:
+              
+            </div>
+          </div>
+        </div> 
+        <!--stat-->
+        <div class="box">
+          <div class="flex">
+            <div>
+      <img class="image" src="https://iili.io/dlvfhwg.md.jpg"       >
+            </div>
+            <div class="aboutbook">
+              Name:B.SC,B.A STATISTICS STATISTICAL METHOD
+              NO OF AVAILABLE BOOKS:
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+      <img class="image" src="https://iili.io/dlvqw57.md.jpg">
+            </div>
+            <div class="aboutbook">
+          name:B.A,B.SC STATISTICS
+          NO OF AVAILABLE BOOKS:
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+      <img class="image" src="https://iili.io/dlvqm1R.md.jpg">
+            </div>
+            <div class="aboutbook">
+              Name:B.A-B.SC.STATISTICS
+              NO OF AVAILABLE BOOKS:      
+            </div>
+          </div>
+          <div class="flex">
+            <div>
+      <img class="image" src="https://iili.io/dlvnkzX.md.jpg">
+            </div>
+            <div class="aboutbook">
+            Name:BASIC STATISTICS
+            NO OF AVAILABLE BOOKS:
+            </div>
+          </div>
+          </div>
+      <div class="box">
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dlv7Q8g.md.jpg">
+              </div>
+              <div class="aboutbook">
+      Name:BUSINESS MATHEMATICS
+      NO OF AVAILABLE BOOKS:       
+              </div>
+            </div>
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dlv1uun.md.jpg">
+              </div>
+              <div class="aboutbook">
+      Name:BUSINESS MATHEMATICS AND STATISTICS
+      NO OF AVAILABLE BOOKS:           
+              </div>
+            </div>
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dlvGvhg.md.jpg">
+              </div>
+              <div class="aboutbook">
+                
+      Name:BUSINESS STATISTICS 
+      NO OF AVAILABLE BOOKS:
+              </div>
+            </div>
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dlvXJvp.md.jpg">
+              </div>
+              <div class="aboutbook">
+              Name:BUSINESS STATISTICS
+              NO OF AVAILABLE BOOKS:    
+              </div>
+            </div>
+            </div>
+      <div class="box">
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dlvjlpV.md.jpg">
+              </div>
+              <div class="aboutbook">
+      Name:BUSINESS STATISTICS 
+      NO OF AVAILABLE BOOKS:   
+              </div>
+            </div>
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dlvUgGp.md.jpg">
+              </div>
+              <div class="aboutbook">
+      Name:B.B.M AND MBA BUSINESS STATISTICS
+      NO OF AVAILABLE BOOKS: 
+              </div>
+            </div>
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dlvyRbR.md.jpg">
+              </div>
+              <div class="aboutbook">
+                
+      Name:DIFFERENTIAL EQUATIONS SEM 1 
+      NO OF AVAILABLE BOOKS:   
+              </div>
+            </div>
+            <div class="flex">
+              <div>
+      <img class="image" src="https://iili.io/dl89dBI.md.jpg">
+              </div>
+              <div class="aboutbook">
+              Name:FUNDAMENTAL OF APPLIED STATISTICS
+              NO OF AVAILABLE BOOKS:  
+              </div>
+            </div>
+            </div>
+      <div class="box">
+              <div class="flex">
+                <div>
+      <img class="image" src="https://iili.io/dl89W3F.md.jpg">
+                </div>
+                <div class="aboutbook">
+      Name:FUNDAMENTAL OF MATHEMATICAL STATISTICS  
+      NO OF AVAILABLE BOOKS:
+                </div>
+              </div>
+              <div class="flex">
+                <div>
+      <img class="image" src="https://iili.io/dl8Ju5u.md.jpg">
+                </div>
+                <div class="aboutbook">
+      Name:PROBABILITY AND STATISTICAL INFERENCE 9THEDITION
+      NO OF AVAILABLE BOOKS:           
+                </div>
+              </div>
+              <div class="flex">
+                <div>
+      <img class="image" src="https://iili.io/dl83TJt.md.jpg">
+                </div>
+                <div class="aboutbook">
+                  Name:PROBABILITY AND STATISTICAL INFERENCE TENTH EDITION 
+                  NO OF AVAILABLE BOOKS:
+                </div>
+              </div>
+              <div class="flex">
+                <div>
+      <img class="image" src="https://iili.io/dl8uZoN.md.jpg">
+                </div>
+                <div class="aboutbook">
+                
+      Name:STATISTICAL METHOD
+      NO OF AVAILABLE BOOKS:
+                </div>
+              </div>
+              </div>
+             
+       <!--physics-->
+       <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVAYJ4V.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ELECTRICAL APPLIANCE<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVAYwZb.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:MECHANICS,WAVES AND OSCILLATIONS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVAzlNR.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:UNIFIED PHYSICS MECHANICS AND PROPERTIES OF MATTER<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVA1aEJ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:MODERN PHYSICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVAGKKb.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED PHYSICS-1<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVAVCZP.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:WAVE OPTICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVAhxM7.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:THERMODYNAMICS AND RADIATUIN PHYSICS<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVAOc5g.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:RENEWABLE ENERGY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVAeQat.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:OPTICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVAv512.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:WAVES AND OSCILLATIONS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVASul2.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:IIT-JAM PHYSICS<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVAgQcl.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIVERSITY OF PHYSICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVAPQse.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:SCIENCE AND TECHNOLOGY OF ULTRASONICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVAQSQS.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:MECHANICS WAVES AND OSCILLATIONS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVG8F7n.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:WAVES AND OSCILLATIONS<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVGSxwJ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ELECTRICITY,MAGNETISM AND ELECTRONICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVGUyLx.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:HEAT THERMODYNAMICS AND STATISTICAL PHYSICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVGrB87.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:WAVES AND OSCILLATIONS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVGrDVj.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:THERMODINAMICS AND RADIATION PHYSICS<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVG4Z7I.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:PRINCIPLES OF PHYSICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVG6ry7.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:FUNDAMENTALS OF NANOSCIENCE<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVGiI5B.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:MECAHNICS AND PROPERTIES OF MATTER<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVGseCg.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:MODERN PHYSCIS<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVGLrKb.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ELECTRONIC INSTRUMENTATION-7C<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVGZFYx.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:PHYSICS LABORATORY  COURSE<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVGZbcJ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:WAVE OPTICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVGDSmQ.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:HEAT AND THERMODYNAMICS<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVGbbcu.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:PHYSICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div>  
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dVGpaqP.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:WAVE OPTICS 2 YEAR 3 SEM <br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dVGy1GS.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ELECTRICITY,MAGNETISM AND ELECTRONICS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dVM9pqB.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:RENEWABLE ENERGY<br>
+      NO OF AVAILABLE BOOKS:
+   <!--CHEMISTRY-->   
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dWvxZB4.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ANALYSIS OF SALT MIXTURE<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dWv74z7.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:INORGANIC AND PHYSICAL CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dWvWfP2.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:PHYSICAL AND GENERAL CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dWvjAoG.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:ELEMENTARY ORGANIC SPECTROSCOPY<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dWvONUl.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:RASAAYANA SASTRAM<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dW899wP.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:KALYANI UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dWviQ7n.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dWvpghF.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:UNIFIED CHEMISTYR<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXTqFAQ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:KALYANI UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dW8J3Yv.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ORGANIC CHEMISTRY PHYSICAL CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXTqFAQ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ANALYTICAL METHODS IN CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dW8q8WQ.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:UNIFIED CHEMISTYR<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dW8CrHF.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dW8ojCx.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:INORGANIC AND PHYSICAL CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dW8zemF.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED POLYMER CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dW8muEJ.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:KALYANI UNIFIED CHEMISTYR<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dW8tp3l.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:SPECTROSCOPY OF ORGANIC COMPOUNDS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dWS9p3b.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:KALYANI UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dWSJV5v.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:KALYANI UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXTTmxf.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:KALYANI UNIFIED CHEMISTYR<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXTAOTg.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dXT5eqv.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:CHEMISTRY IN DAILY LIFE<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXTYNlR.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXTaQEJ.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:UNIFIED PHYSICS MATERIALS SCIENCE<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXT1zQt.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dXTE1Hv.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ORGANIC CHEMISTRY VOLUME 2<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXTWRkJ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ORGANIC CHEMISTRY VOLUME 1<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXTXV6P.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:BOITHIKA SASTRAM SEM 1<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXT62nt.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:BOITHIKA SASTRAM<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dXTPKzB.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ESSENTIALS OF PHYSICAL CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXTs9Ax.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:CONCISE COORDINATION CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXTQE67.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:VOGEL'S QUALITATIVE INORGANIC ANALYSIS<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXTDd4S.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:PROBLEMS AND THEIR SOLUTIONS IN ORGANIC CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dXSAEZb.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:MECHANISM IN ORGANIC CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXS7QN1.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ORGANIC CHEMISTRY SEM 3<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXSc1wP.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:LAB MANUAL OF ORGANIC CHEMISTRY<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXS0fkl.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:ORGANIC SYNTHESIS THROUGH DISCONNECTION APPROACH<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dXSGoQI.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:PHOTOCHEMISTRY AND PERICYCLIC REACTIONS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXSWEGI.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:KALYANI UNIFIED CHEMISTYR<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXSjnjf.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:UNIFIED CHEMISTYR SEM 1<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXSwQOg.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED ANALYTICAL METHODS IN CHEMISTRY <br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dXSkiCJ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTYR SYNTHETIC ORGANIC CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXSgFVe.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTRY ANALYSIS OF ORGANIC COMPOUNDS<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXSPrTQ.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:UNIFIED CHEMISTRY SEM 1<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXSZY0P.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTRY PAPER 5<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="https://iili.io/dXSttat.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:UNIFIED CHEMISTRY SEM 3<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="https://iili.io/dXSbhqQ.jpg">
+          </div>
+          <div class="aboutbook">
+            NAME:KALYANI UNIFIED CHEMISTRY<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="https://iili.io/dXSyB0Q.jpg">
+          </div>
+          <div class="aboutbook">
+      NAME:KALYANI UNIFIED CHEMISTRY<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+            NAME:<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+            NAME:<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+            NAME:<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+      NAME:<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+            NAME:<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+        <div class="flex">
+          <div>
+        <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+            NAME:<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+         <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+            NAME:<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+      NAME:<br>
+      NO OF AVAILABLE BOOKS:
+      
+          </div>
+        </div>
+        <div class="flex">
+          <div>
+      <img class="image" src="">
+          </div>
+          <div class="aboutbook">
+            NAME:<br>
+            NO OF AVAILABLE BOOKS:
+            
+          </div>
+        </div>
+      </div> 
+      <div class="box">
+  <div class="flex">
+    <div>
+  <img class="image" src="">
+    </div>
+    <div class="aboutbook">
+      NAME:<br>
+      NO OF AVAILABLE BOOKS:
+      
+    </div>
+  </div>
+  <div class="flex">
+    <div>
+   <img class="image" src="">
+    </div>
+    <div class="aboutbook">
+      NAME:<br>
+      NO OF AVAILABLE BOOKS:
+      
+    </div>
+  </div>
+  <div class="flex">
+    <div>
+<img class="image" src="">
+    </div>
+    <div class="aboutbook">
+NAME:<br>
+NO OF AVAILABLE BOOKS:
+
+    </div>
+  </div>
+  <div class="flex">
+    <div>
+<img class="image" src="">
+    </div>
+    <div class="aboutbook">
+      NAME:<br>
+      NO OF AVAILABLE BOOKS:
+      
+    </div>
+  </div>
+</div> 
+
+              <script>           
+    // Sample product data with image URLs
+    const products = [
+      { name: 'INSPIRING ESSAYS', description: '', image: 'https://iili.io/dlhDCxf.md.jpg' },
+      { name: 'compendpuium of words', description: '', image: 'https://iili.io/dljSqKb.md.jpg' },
+      { name: 'aids to the study and composition of english', description: '', image: 'https://iili.io/dljysb1.md.jpg' },
+      { name: 'Communication and soft skills', description: '',  image: 'https://iili.io/dlNrvzQ.md.jpg'}, 
+      { name: 'english a spectrum of language skills',  description: '', image: 'https://iili.io/dlOFtj4.md.jpg' },
+      { name: 'English Conversation Practice', description: '', image: 'https://iili.io/dlOnuQj.md.jpg' },
+      { name: 'English in Use semister 1', description: '', image: 'https://iili.io/dlO0DDx.md.jpg' },
+      { name: 'English portal', description: '', image: 'https://iili.io/dlO0DDx.md.jpg' },
+      { name: 'English Proxis Course 1', description: '', image: 'https://iili.io/dlOL2nf.md.jpg' },
+      { name: 'everyday vocabulary', description: '', image: 'https://iili.io/dlODqib.md.jpg' },
+      { name: 'Grammer and Spoken English', description: '', image: 'https://iili.io/dlOm4lj.md.jpg' },
+      { name: 'Lingua franca plethora semister 1', description: '', image: 'https://iili.io/dle9pfe.md.jpg' },
+      { name: 'Lingua franca plethora semister 3', description: '', image: 'https://iili.io/dle9pfe.md.jpg' },
+      { name: 'merriam-websters_collegiate_thesaurs-2[1]', description: '', image: 'https://iili.io/dleBPCx.md.jpg' },
+      { name: 'model letters', description: '', image: 'https://iili.io/dleocEx.md.jpg' },
+      { name: 'Modern Essays for collage students', description: '', image: 'https://iili.io/dlezxO7.md.jpg' },
+      { name: 'Objective General English', description: '', image: 'https://iili.io/dleTjAN.md.jpg' },
+      { name: 'Objective General Engllish 1000+ Questions', description: '', image: 'https://iili.io/dGVhUT7.md.jpg' },
+      { name: 'oxford adavanced learners dictionary', description: '', image: 'https://iili.io/dGV45HF.md.jpg' },
+      { name: 'ramayana eng', description: '', image: 'https://iili.io/dGW9BnI.md.jpg' },
+      { name: 'Skill genie 2', description: '', image: 'https://iili.io/dGViFSI.md.jpg' },
+      { name: 'skill pro 1', description: '', image: 'https://iili.io/dGVsX14.md.jpg' },
+      { name: 'Skill Pro 3', description: '', image: 'https://iili.io/dGVLx3l.md.jpg' },
+      { name: 'skill pro', description: '', image: 'https://iili.io/dGVQASp.md.jpg' },
+      { name: 'Skills Enrich', description: '', image: 'https://iili.io/dGVZw2R.md.jpg' },
+      { name: 'Skills Genie', description: '', image: 'https://iili.io/dGVtAuI.md.jpg' },
+      { name: 'The Dulingo English Test', description: '', image: 'https://iili.io/dGVDJPs.md.jpg' },
+      { name: 'The WHIZ-KID Book of Essays', description: '', image: 'https://iili.io/dGVbCdv.md.jpg' },
+      { name: 'Topical Essays', description: '', image: 'https://iili.io/dGVmBn9.md.jpg' },
+      { name: 'Usage of Key words', description: '', image: 'https://iili.io/dGVmLKu.md.jpg' },
+      { name: 'word power made easy', description: '', image: 'https://iili.io/dGWHrdu.jpg' },
+      //teugu
+      { name: 'Aadhunika Basha Sastar Sidhanthalu', description: '', image: 'https://iili.io/dGWF39n.jpg' },
+      { name: 'Astadhasha Puranamulul', description: '', image: 'https://iili.io/dGWKOzb.jpg' },
+      { name: 'Batruhari Shubashithamu', description: '', image: 'https://iili.io/dGWnYog.jpg' },
+      { name: 'BHAGAVATHAM', description: '', image: 'https://iili.io/dGWxicx.jpg' },
+      { name: 'Group-2_Telugu_Saahityam 1[1]', description: '', image: 'https://iili.io/dGWIFgj.jpg' },
+      { name: 'Kavyasudha', description: '', image: 'https://iili.io/dGWLmI1.jpg' },
+      { name: 'PEDHA BALASIKSHA PART 2', description: '', image: 'https://iili.io/dGXk1yJ.jpg' },
+      { name: 'MAHABHARATHAM', description: '', image: 'https://iili.io/dGWtJJR.jpg' },
+      { name: 'PEDHA BALASIKSHA PART 1', description: '', image: 'https://iili.io/dGWbxN2.jpg' },
+      { name: 'PURVAGAADHALAHARY', description: '', image: 'https://iili.io/dGWpE6F.jpg' },
+      { name: 'RAMAYANAM', description: '', image: 'https://iili.io/dGX9s49.jpg' },
+      { name: 'SAAHITHI KOIMUDHI', description: '', image: 'https://iili.io/dGXFMpn.jpg' },
+      { name: 'SAAHITHI VIMARSA', description: '', image: 'https://iili.io/dGXKits.jpg' },
+      { name: 'SABDHARATNAKARAMU 1', description: '', image: 'https://iili.io/dGXCJDX.jpg' },
+      { name: 'SABDHARATNAKARAMU', description: '', image: 'https://iili.io/dGXzZaj.jpg' },
+      { name: 'SAHIDHI KOIMUDHI', description: '', image: 'https://iili.io/dGXuMyx.jpg' },
+      { name: 'SARASVATHI VYASAMULU', description: '', image: 'https://iili.io/dGXRxef.jpg' },
+      { name: 'SPECIAL TELUGU PART 2 PAPER 1', description: '', image: 'https://iili.io/dGXYcdX.jpg' },
+      { name: 'TELUGU ENGLISH DICTIONARY', description: '', image: 'https://iili.io/dGXlxee.jpg' },
+      { name: 'TELUGU GUIDE', description: '', image: 'https://iili.io/dGX0PoJ.jpg' },
+      { name: ' TELUGU PART 1 PAPER 2', description: '', image: 'https://iili.io/dGXGU9S.jpg' },
+      { name: 'TELUGU -PARISODHANA', description: '', image: 'https://iili.io/dGXWqZX.jpg' },
+      { name: 'TELUGU SEMISTER 1', description: '', image: 'https://iili.io/dGXjRup.jpg' },
+      //MATHS
+      { name: '1 BSc DIFFERENTIAL EQUATION SEM 1', description: '', image: 'https://iili.io/dGXyg4t.jpg' },
+      { name: '1 BSc MATHEMATICS SEM1 PAPER 1', description: '', image: 'https://iili.io/dGhd6il.jpg' },
+      { name: 'ABSTRACT ALGEBRA 7TH EDITION', description: '', image: 'https://iili.io/dGhfBYN.jpg' },
+      { name: 'BSc MATHEMATICS 1YEAR 2 SEM', description: '', image: 'https://iili.io/dGhBpv2.jpg' },
+      { name: 'BUINESS MATHEMATICS', description: '', image: 'https://iili.io/dGhREtR.jpg' },
+      { name: 'DIFFERENTIAL EQUATIONS SEM 1', description: '', image: 'https://iili.io/dGh5O0P.jpg' },
+      { name: 'DIFFERENTIAL EQUATIONS', description: '', image: 'https://iili.io/dGhavd7.jpg' },
+      { name: 'DISCRETE MATHEMATICS', description: '', image: 'https://iili.io/dGhlwSS.jpg' },
+      { name: 'ELEMENTARY MATHEMATICS', description: '', image: 'https://iili.io/dGh1r8B.jpg' },
+      { name: 'ELEMENTARY TRIGONOMETRY', description: '', image: 'https://iili.io/dGhMmcx.jpg' },
+      { name: 'ELEMENTS OF REAL ANALYSIS', description: '', image: 'https://iili.io/dGhWSkl.jpg' },
+      { name: 'ENGINEEIRING MATHEMATICS', description: '', image: 'https://iili.io/dGhhdtS.jpg' },
+      { name: 'FINITE DIFFERENCE AND NUMERICAL ANALYSIS', description: '', image: 'https://iili.io/dGhjpTl.jpg' },
+      { name: 'FUNCTIONS OF ONE COMPLEX VARIABLE', description: '', image: 'https://iili.io/dGheoZl.jpg' },
+      { name: 'IIT JAM MATHEMATICS PREVIOUS AND PRATICE PAPERS', description: '', image: 'https://iili.io/dGhvNBp.jpg' },
+      { name: 'LINEAR ALGEBRA', description: '', image: 'https://iili.io/dGhUUyF.jpg' },
+      { name: 'LINEAR PROGRAMMING', description: '', image: 'https://iili.io/dGh4Fp9.jpg' },
+      { name: 'MAGICAL BOOK FOR QUICKER MATHEMATICS', description: '', image: 'https://iili.io/dGhPSI9.jpg' },
+      { name: 'MATHEMATICS VOILUEM 3 RING THEORY AND CALCULUS', description: '', image: 'https://iili.io/dGhsltt.jpg' },
+      { name: 'MATHEMATICS ABSTRACT ALGEBRA SEM 3 PAPER 3', description: '', image: 'https://iili.io/dGhLZp2.jpg' },
+      { name: 'MATHEMATICS FIRST YEAR TELUGU', description: '', image: 'https://iili.io/dGhDAyx.jpg' },
+      { name: 'MATHEMATICS FOFR NDA AND NA', description: '', image: 'https://iili.io/dGhme7s.jpg' },
+      { name: 'MATHEMATICS LINEAR ALGEBRA VOLUME 3', description: '', image: 'https://iili.io/dGhyGiN.jpg' },
+      { name: 'MATHEMATICS RING THEORY AND CALCULUS SEM 5 PAPER 5', description: '', image: 'https://iili.io/dGjHNn4.jpg' },
+      { name: 'MATHEMATICS SEM 1 AND 2', description: '', image: 'https://iili.io/dGjdmZJ.jpg' },
+      { name: 'MATHEMATICS SEM 3 AND 4', description: '', image: 'https://iili.io/dGj3KlV.jpg' },
+      { name: 'MATHEMATICS VOILUME 1', description: '', image: 'https://iili.io/dGjwLLN.jpg' },
+      { name: 'MATHEMATICS VOLUME 2 ABSTRACT ALGEBRA', description: '', image: 'https://iili.io/dGjkACl.jpg' },
+      { name: 'MATHEMATICS VOLUME 2 REAL ANALYSIS', description: '', image: 'https://iili.io/dGj86pn.jpg' },
+      { name: 'MATHEMATICS VOLUME 2', description: '', image: 'https://iili.io/dGjgyvI.jpg' },
+      { name: 'MATHEMATICS VOLUME 3', description: '', image: 'https://iili.io/dGj657V.jpg' },
+      { name: 'NUMARICAL ANALYSIS', description: '', image: 'https://iili.io/dGjLjFs.jpg' },
+      { name: 'ORDINARY AND PARTIAL DIFFERENTIAL EQUATIONS', description: '', image: 'https://iili.io/dGjteHJ.jpg' },
+      { name: 'PRINCIPLES OF MANAGEMENT', description: '', image: 'https://iili.io/dGjphzv.jpg' },
+      { name: 'REAL ANALYSIS', description: '', image: 'https://iili.io/dGwJM4p.jpg' },
+      { name: 'SOLID GEOMETRY', description: '', image: 'https://iili.io/dGwd8Dg.jpg' },
+      { name: 'SPECIAL FUNCTIONS', description: '', image: 'https://iili.io/dGwFKMb.jpg' },
+      { name: 'THOMAS CALCULUS', description: '', image: 'https://iili.io/dGwqH9p.jpg' },
+      { name: 'VECTOR ANALYSIS', description: '', image: 'https://iili.io/dGwncUG.jpg' },
+      { name: 'DIFFERENTIAL EQUATIONS TELUGU', description: '', image: 'https://iili.io/dGwAb8F.jpg' },
+      //stat
+      { name: 'B.A,B.SC STATISTICAL METHODS', description: '', image: 'https://iili.io/dlvfhwg.md.jpg'},
+      { name: 'B.A,B.SC STATISTICS', description: '', image: 'https://iili.io/dlvqw57.md.jpg'},
+      { name: 'B.A-B.SC.STATISTICS', description: '', image:'https://iili.io/dlvqm1R.md.jpg' },
+      { name: 'BASIC STATISTICS ', description: '', image:' https://iili.io/dlvnkzX.md.jpg' },
+      { name: 'BUSINESS MATHEMATICS ', description: '', image: 'https://iili.io/dlv7Q8g.md.jpg' },
+      { name: 'BUSINESS MATHEMATICS AND STATISTICS ', description: '', image: 'https://iili.io/dlv1uun.md.jpg' },
+      { name: 'BUSINESS STATISTICS ', description: '', image: 'https://iili.io/dlvGvhg.md.jpg' },
+      { name: 'BUSINESS STATISTICS ', description: '', image: 'https://iili.io/dlvXJvp.md.jpg' },
+      { name: 'BUSINESS STATISTICS ', description: '', image: 'https://iili.io/dlvjlpV.md.jpg' },
+      { name: 'B.B.M,MBA  BUSINESS STATISTICS ', description: '', image: 'https://iili.io/dlvUgGp.md.jpg' },
+      { name: 'DIFFERENTIAL EQUATIONS SEM ', description: '', image: '"https://iili.io/dlvUgGp.md.jpg' },
+      { name: 'FUNDAMENTAL OF APPLIED STATISTICS ',  description: '',image: 'https://iili.io/dl89dBI.md.jpg' },
+      { name: 'FUNDAMENTAL OF MATHEMATICAL STATISTICS ',  description: '',image: 'https://iili.io/dl89W3F.md.jpg' },
+      { name: 'PROBABILITY AND STATISTICAL INFERENCE 9TH EDITION', description: '', image: 'https://iili.io/dl8Ju5u.md.jpg' },
+      { name: 'PROBABILITY AND STATISTICAL INFERENCE TENTH EDITION', description: '', image: 'https://iili.io/dl83TJt.md.jpg' },
+      { name: 'STATISTICAL METHOD ', description: '', image: 'https://iili.io/dl8uZoN.md.jpg' },
+      { name: 'STATISTICAL METHODS AND THEORY APPLICATIONS ',  description: '',image: 'https://iili.io/dl8YVvn.md.jpg'},
+      //physics
+      
+      { name: 'ELECTRICAL APPLIANCE', description: '', image: 'https://iili.io/dVAYJ4V.jpg' },
+      { name: 'MECHANICS,WAVES AND OSCILLATIONS', description: '', image: 'https://iili.io/dVAYwZb.jpg' },
+      { name: 'UNIFIED PHYSICS MECHANICS AND PROPERTIES OF MATTER', description: '', image: 'https://iili.io/dVAzlNR.jpg' },
+      { name: 'MODERN PHYSICS', description: '', image: 'https://iili.io/dVA1aEJ.jpg' },
+      { name: 'UNIFIED PHYSICS-1', description: '', image: 'https://iili.io/dVAGKKb.jpg' },
+      { name: 'WAVE OPTICS', description: '', image: 'https://iili.io/dVAVCZP.jpg' },
+      { name: 'THERMODYNAMICS AND RADIATUIN PHYSICS', description: '', image: 'https://iili.io/dVAhxM7.jpg' },
+      { name: 'RENEWABLE ENERGY', description: '', image: 'https://iili.io/dVAOc5g.jpg' },
+      { name: 'OPTICS', description: '', image: 'https://iili.io/dVAeQat.jpg' },
+      { name: 'WAVES AND OSCILLATIONS', description: '', image: 'https://iili.io/dVAv512.jpg' },
+      { name: 'IIT-JAM PHYSICS', description: '', image: 'https://iili.io/dVASul2.jpg' },
+      { name: 'UNIVERSITY OF PHYSICS', description: '', image: 'https://iili.io/dVAgQcl.jpg' },
+      { name: 'SCIENCE AND TECHNOLOGY OF ULTRASONICS', description: '', image: 'https://iili.io/dVAPQse.jpg' },
+      { name: 'MECHANICS WAVES AND OSCILLATIONS', description: '', image: 'https://iili.io/dVAQSQS.jpg' },
+      { name: 'WAVES AND OSCILLATIONS', description: '', image: 'https://iili.io/dVG8F7n.jpg' },
+      { name: 'ELECTRICITY,MAGNETISM AND ELECTRONICS', description: '', image: 'https://iili.io/dVGSxwJ.jpg' },
+      { name: 'HEAT THERMODYNAMICS AND STATISTICAL PHYSICS', description: '', image: 'https://iili.io/dVGUyLx.jpg' },
+      { name: 'WAVES AND OSCILLATIONS', description: '', image: 'https://iili.io/dVGrB87.jpg' },
+      { name: 'THERMODINAMICS AND RADIATION PHYSICS', description: '', image: 'https://iili.io/dVGrDVj.jpg' },
+      { name: 'PRINCIPLES OF PHYSICS', description: '', image: 'https://iili.io/dVG4Z7I.jpg' },
+      { name: 'FUNDAMENTALS OF NANOSCIENCE', description: '', image: 'https://iili.io/dVG6ry7.jpg' },
+      { name: 'MECAHNICS AND PROPERTIES OF MATTER', description: '', image: 'https://iili.io/dVGiI5B.jpg' },
+      { name: 'MODERN PHYSCIS', description: '', image: 'https://iili.io/dVGseCg.jpg' },
+      { name: 'ELECTRONIC INSTRUMENTATION-7C', description: '', image: 'https://iili.io/dVGLrKb.jpg' },
+      { name: 'PHYSICS LABORATORY  COURSE', description: '', image: 'https://iili.io/dVGZFYx.jpg' },
+      { name: 'WAVE OPTICS', description: '', image: 'https://iili.io/dVGZbcJ.jpg' },
+      { name: 'HEAT AND THERMODYNAMICS', description: '', image: 'https://iili.io/dVGDSmQ.jpg' },
+      { name: 'PHYSICS', description: '', image: 'https://iili.io/dVGbbcu.jpg' },
+      { name: 'WAVE OPTICS 2 YEAR 3 SEM', description: '', image: 'https://iili.io/dVGpaqP.jpg' },
+      { name: 'ELECTRICITY,MAGNETISM AND ELECTRONICS', description: '', image: 'https://iili.io/dVGy1GS.jpg' },
+      { name: 'RENEWABLE ENERGY', description: '', image: 'https://iili.io/dVM9pqB.jpg' },
+      //chemistry
+
+      { name: 'ANALYSIS OF SALT MIXTURE', description: '', image: 'https://iili.io/dWvxZB4.jpg' },
+      { name: 'INORGANIC AND PHYSICAL CHEMISTRY', description: '', image: 'https://iili.io/dWv74z7.jpg' },
+      { name: 'PHYSICAL AND GENERAL CHEMISTRY', description: '', image: 'https://iili.io/dWvWfP2.jpg' },
+      { name: 'ELEMENTARY ORGANIC SPECTROSCOPY', description: '', image: 'https://iili.io/dWvjAoG.jpg' },
+      { name: 'RASAAYANA SASTRAM', description: '', image: 'https://iili.io/dWvONUl.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dW899wP.jpg' },
+      { name: 'UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dWviQ7n.jpg' },
+      { name: 'UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dWvpghF.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dXTqFAQ.jpg' },
+      { name: 'ORGANIC CHEMISTRY PHYSICAL CHEMISTRY', description: '', image: 'https://iili.io/dW8J3Yv.jpg' },
+      { name: 'ANALYTICAL METHODS IN CHEMISTRY', description: '', image: 'https://iili.io/dXTqFAQ.jpg' },
+      { name: 'UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dW8q8WQ.jpg' },
+      { name: 'UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dW8CrHF.jpg' },
+      { name: 'INORGANIC AND PHYSICAL CHEMISTRY', description: '', image: 'https://iili.io/dW8ojCx.jpg' },
+      { name: 'UNIFIED POLYMER CHEMISTRY', description: '', image: 'https://iili.io/dW8zemF.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dW8muEJ.jpg' },
+      { name: 'SPECTROSCOPY OF ORGANIC COMPOUNDS', description: '', image: 'https://iili.io/dW8tp3l.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dWS9p3b.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dWSJV5v.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dXTTmxf.jpg' },
+      { name: 'UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dXTAOTg.jpg' },
+      { name: 'CHEMISTRY IN DAILY LIFE', description: '', image: 'https://iili.io/dXT5eqv.jpg' },
+      { name: 'UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dXTYNlR.jpg' },
+      { name: 'UNIFIED PHYSICS MATERIALS SCIENCE', description: '', image: 'https://iili.io/dXTaQEJ.jpg' },
+      { name: 'CHEMISTRY', description: '', image: 'https://iili.io/dXT1zQt.jpg' },
+      { name: 'ORGANIC CHEMISTRY VOLUME 2', description: '', image: 'https://iili.io/dXTE1Hv.jpg' },
+      { name: 'ORGANIC CHEMISTRY VOLUME 1', description: '', image: 'https://iili.io/dXTWRkJ.jpg' },
+      { name: 'BOITHIKA SASTRAM SEM 1', description: '', image: 'https://iili.io/dXTXV6P.jpg' },
+      { name: 'BOITHIKA SASTRAM', description: '', image: 'https://iili.io/dXT62nt.jpg' },
+      { name: 'ESSENTIALS OF PHYSICAL CHEMISTRY', description: '', image: 'https://iili.io/dXTPKzB.jpg' },
+      { name: 'CONCISE COORDINATION CHEMISTRY', description: '', image: 'https://iili.io/dXTs9Ax.jpg' },
+      { name: 'VOGEL\'S QUALITATIVE INORGANIC ANALYSIS', description: '', image: 'https://iili.io/dXTQE67.jpg' },
+      { name: 'PROBLEMS AND THEIR SOLUTIONS IN ORGANIC CHEMISTRY', description: '', image: 'https://iili.io/dXTDd4S.jpg' },
+      { name: 'MECHANISM IN ORGANIC CHEMISTRY', description: '', image: 'https://iili.io/dXSAEZb.jpg' },
+      { name: 'ORGANIC CHEMISTRY SEM 3', description: '', image: 'https://iili.io/dXS7QN1.jpg' },
+      { name: 'LAB MANUAL OF ORGANIC CHEMISTRY', description: '', image: 'https://iili.io/dXSc1wP.jpg' },
+      { name: 'ORGANIC SYNTHESIS THROUGH DISCONNECTION APPROACH', description: '', image: 'https://iili.io/dXS0fkl.jpg' },
+      { name: 'PHOTOCHEMISTRY AND PERICYCLIC REACTIONS', description: '', image: 'https://iili.io/dXSGoQI.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTYR', description: '', image: 'https://iili.io/dXSWEGI.jpg' },
+      { name: 'UNIFIED CHEMISTYR SEM 1', description: '', image: 'https://iili.io/dXSjnjf.jpg' },
+      { name: 'UNIFIED ANALYTICAL METHODS IN CHEMISTRY', description: '', image: 'https://iili.io/dXSwQOg.jpg' },
+      { name: 'UNIFIED CHEMISTYR SYNTHETIC ORGANIC CHEMISTRY', description: '', image: 'https://iili.io/dXSkiCJ.jpg' },
+      { name: 'UNIFIED CHEMISTRY ANALYSIS OF ORGANIC COMPOUNDS', description: '', image: 'https://iili.io/dXSgFVe.jpg' },
+      { name: 'UNIFIED CHEMISTRY SEM 1', description: '', image: 'https://iili.io/dXSPrTQ.jpg' },
+      { name: 'UNIFIED CHEMISTRY PAPER 5', description: '', image: 'https://iili.io/dXSZY0P.jpg' },
+      { name: 'UNIFIED CHEMISTRY SEM 3', description: '', image: 'https://iili.io/dXSttat.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTRY', description: '', image: 'https://iili.io/dXSbhqQ.jpg' },
+      { name: 'KALYANI UNIFIED CHEMISTRY', description: '', image: 'https://iili.io/dXSyB0Q.jpg' },
+      
+    ];
+
+    function search() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const filteredProducts = products.filter(product =>
+        product.name.toLowerCase().includes(query) ||
+        product.description.toLowerCase().includes(query)
+      );
+
+      const resultsContainer = document.getElementById('search-results');
+      resultsContainer.innerHTML = '';
+
+      if (filteredProducts.length > 0) {
+        filteredProducts.forEach(product => {
+          const productItem = document.createElement('div');
+          productItem.className = 'product-item';
+          productItem.innerHTML = `
+            <img src="${product.image}" alt="${product.name}">
+            <h3>${product.name}</h3>
+            <p>${product.description}</p>
+          `;
+          resultsContainer.appendChild(productItem);
+        });
+      } else {
+        resultsContainer.innerHTML = '<p>No products found.</p>';
+      }
+    }
+
+    function showSuggestions() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const suggestions = products.filter(product =>
+        product.name.toLowerCase().includes(query) ||
+        product.description.toLowerCase().includes(query)
+      );
+
+      const suggestionsContainer = document.getElementById('suggestions');
+      suggestionsContainer.innerHTML = '';
+
+      if (suggestions.length > 0 && query !== '') {
+        suggestions.forEach(product => {
+          const suggestionItem = document.createElement('div');
+          suggestionItem.className = 'suggestion-item';
+          suggestionItem.innerHTML = product.name;
+
+          suggestionItem.onmouseover = function() {
+            document.getElementById('search-input').value = product.name;
+          };
+
+          suggestionItem.onclick = function() {
+            const resultsContainer = document.getElementById('search-results');
+            resultsContainer.innerHTML = `
+              <div class="product-item">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+              </div>
+            `;
+            suggestionsContainer.innerHTML = '';
+          };
+
+          suggestionsContainer.appendChild(suggestionItem);
+        });
+      }
+    }
+
+    function toggleSuggestions(show) {
+      const suggestionsContainer = document.getElementById('suggestions');
+      if (show) {
+        suggestionsContainer.style.display = 'block';
+      } else {
+        setTimeout(() => {
+          suggestionsContainer.style.display = 'none';
+        }, 100);
+      }
+    }
+  </script>
+</body>
+</html>
+                
